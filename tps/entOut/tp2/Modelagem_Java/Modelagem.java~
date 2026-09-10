@@ -55,7 +55,8 @@ class Veiculo
 		this.co2 = co2;
 		this.turbo = turbo;
 		this.dataRegistro = dataRegistro;	
-	}	
+	}
+
 
 
 
@@ -65,8 +66,33 @@ class Veiculo
 
 }
 
-public String[] divirStr(String[] partesLinha, String linha)
+public String[] splitar(String[] partesLinha, String linha)
 {
+	partesLinha = linha.split(",");
+	return partesLinha;
+
+}
+public void atribuir( String[] partesLinha , int id , String marca , String modelo , int ano ,
+					  String categoria , String[] combustivel ,int cilindros ,double cilindrada ,
+					  String transmissao , String tracao , double consumoCidade, double consumoEstrada ,
+					  double co2 , boolean turbo , String dataRegistro)
+{
+	id = Integer.parseInt(partesLinha[6]);
+	marca = partesLinha[1];
+	modelo = partesLinha[2];
+	ano = Integer.parseInt(partesLinha[3]);
+	categoria = partesLinha[4];
+	combustivel = partesLinha[5].split(";");
+	cilindros = Integer.parseInt(partesLinha[6]);
+	cilindrada = Double.parseDouble(partesLinha[7]);
+	transmissao = partesLinha[8];
+	tracao = partesLinha[9];
+	consumoCidade = Double.parseDouble(partesLinha[10]);
+	consumoEstrada = Double.parseDouble(partesLinha[11]);
+	co2 = Double.parseDouble(partesLinha[12]);
+	turbo = Boolean.parseBoolean(partesLinha[13]);
+	dataRegistro = partesLinha[14];
+
 
 }
 
@@ -76,6 +102,7 @@ public String[] divirStr(String[] partesLinha, String linha)
 
 	public static void main(String[]args)
 	{
+
 
 	}
 }

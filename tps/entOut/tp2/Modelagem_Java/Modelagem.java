@@ -55,7 +55,61 @@ class Veiculo
 		this.co2 = co2;
 		this.turbo = turbo;
 		this.dataRegistro = dataRegistro;	
-	}	
+	
+	}
+
+
+	public int getId()
+	{
+		return id;
+	}
+	public void setId(int id)
+	{
+		this.id = id;
+	}
+
+	public String getMarca()
+	{
+		return marca;
+	}
+	public void setMarca(String marca)
+	{
+		this.marca = marca;
+	}
+
+	public String getModelo()
+	{
+		return modelo;
+	}
+	public void setModelo(String modelo)
+	{
+		this.modelo = modelo;
+	}
+
+	public int getAno()
+	{
+		return ano;
+	}
+	public void setAno(int ano)
+	{
+		this.ano = ano;
+	}
+
+	public String getCategoria()
+	{
+		return categoria;
+	}
+	public void setCategoria(String categoria)
+	{
+		this.categoria = categoria;
+	}
+
+	public 
+
+
+
+
+
 
 
 
@@ -67,11 +121,33 @@ class Veiculo
 
 public String[] splitar(String[] partesLinha, String linha)
 {
-	partesLinhas = linha.split(",");
+	partesLinha = linha.split(",");
 	return partesLinha;
 
 }
-public void atribuir(
+public void atribuir( String[] partesLinha , int id , String marca , String modelo , int ano ,
+					  String categoria , String[] combustivel ,int cilindros ,double cilindrada ,
+					  String transmissao , String tracao , double consumoCidade, double consumoEstrada ,
+					  double co2 , boolean turbo , String dataRegistro)
+{
+	id = Integer.parseInt(partesLinha[6]);
+	marca = partesLinha[1];
+	modelo = partesLinha[2];
+	ano = Integer.parseInt(partesLinha[3]);
+	categoria = partesLinha[4];
+	combustivel = partesLinha[5].split(";");
+	cilindros = Integer.parseInt(partesLinha[6]);
+	cilindrada = Double.parseDouble(partesLinha[7]);
+	transmissao = partesLinha[8];
+	tracao = partesLinha[9];
+	consumoCidade = Double.parseDouble(partesLinha[10]);
+	consumoEstrada = Double.parseDouble(partesLinha[11]);
+	co2 = Double.parseDouble(partesLinha[12]);
+	turbo = Boolean.parseBoolean(partesLinha[13]);
+	dataRegistro = partesLinha[14];
+
+
+}
 
 
 
@@ -79,6 +155,8 @@ public void atribuir(
 
 	public static void main(String[]args)
 	{
+		String path = "./tmp";
+
 
 	}
 }

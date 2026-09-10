@@ -1,0 +1,85 @@
+import java.util.*;
+import java.io.*;
+
+public class Modelagem{
+class Veiculo
+{
+	private int id;
+	private String marca;
+	private String modelo;
+	private int ano;
+	private String categoria;
+	private String[] combustivel;
+	private int cilindros;
+	private double cilindrada;
+	private String transmissao;
+	private String tracao;
+	private double consumoCidade;
+	private double consumoEstrada;
+	private double co2;
+	private boolean turbo;
+	private String dataRegistro;
+
+	public Veiculo()
+	{
+		this.id = 0;
+		this.marca = " ";
+		this.modelo = " ";
+		this.ano = 0000;
+		this.categoria = " ";
+		this.combustivel = new String[]{" "," "};
+		this.cilindros = 0;
+		this.cilindrada = 0.0;
+		this.transmissao = " ";
+		this.tracao = " ";
+		this.consumoCidade = 0.0;
+		this.consumoEstrada = 0.0;
+		this.co2 = 0.0;
+		this.turbo = false;
+		this.dataRegistro = " ";
+	}
+	public Veiculo(int id , String marca , String modelo , int ano , String categoria , String[] combustivel ,int cilindros ,double cilindrada , String transmissao , String tracao , double consumoCidade, double consumoEstrada , double co2 , boolean turbo , String dataRegistro)
+	{
+		this.id = id;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.ano = ano;
+		this.categoria = categoria;
+		this.combustivel =  combustivel;
+		this.cilindros = cilindros;
+		this.cilindrada = cilindrada;
+		this.transmissao = transmissao;
+		this.tracao = tracao;
+		this.consumoCidade =  consumoCidade;
+		this.consumoEstrada = consumoEstrada;
+		this.co2 = co2;
+		this.turbo = turbo;
+		this.dataRegistro = dataRegistro;	
+	}	
+
+
+
+
+
+
+
+}
+
+public String[] splitar(String[] partesLinha, String linha)
+{
+	partesLinhas = linha.split(",");
+	return partesLinha;
+
+}
+public void atribuir(
+
+
+
+
+
+	public static void main(String[]args)
+	{
+
+	}
+}
+

@@ -1,6 +1,4 @@
 import java.time.LocalDate;
-import java.util.*;
-import java.io.*;
 
 public class Modelagem{
 class Veiculo
@@ -48,7 +46,7 @@ class Veiculo
 
 
 	//INICIALIZANDO VEICULO PASSSANDO AS VARIAVEIS
-	public Veiculo(int id , String marca , String modelo , int ano , String categoria , String[] combustivel ,int cilindros ,double cilindrada , String transmissao , String tracao , double consumoCidade, double consumoEstrada , double co2 , boolean turbo , String dataRegistro)
+	public Veiculo(int id , String marca , String modelo , int ano , String categoria , String[] combustivel ,int cilindros ,double cilindrada , String transmissao , String tracao , double consumoCidade, double consumoEstrada , double co2 , boolean turbo , LocalDate dataRegistro)
 	{
 		this.id = id;
 		this.marca = marca;
@@ -130,7 +128,7 @@ class Veiculo
     {
         return cilindros;
     }
-    public void setCilindros(int cilindro)
+    public void setCilindros(int cilindros)
     {
         this.cilindros = cilindros;
     }
@@ -176,7 +174,7 @@ class Veiculo
     {
         return consumoEstrada;
     }
-    public void setConsumoEstrada(double consumoEstrda)
+    public void setConsumoEstrada(double consumoEstrada)
     {
         this.consumoEstrada = consumoEstrada;
     }
@@ -214,10 +212,10 @@ class Veiculo
 
 // FUNÇÃO SPLITAR O QUE EU QUERO É : AO CHAMR A FUNÇÃO , COMO O PROGRAMA LE A LINHA INTEIRA DO CSV , DIVIR ESTÁ LINHA EM UM VETOR DE STRINGS
 // TEM 2 ATRIBUTOS O PRIMEIRO É O VETOR DE STRINGS QUE VAU RECEBR CADA 'PEDAÇO DA LINHA SEPARADO' , O SEGUNDO E A LINHA COMPLETA
-public 	void dividirEtrocarOtipo(String[] partesLinha, String linha ,  int id , String marca , String modelo , int ano ,
-                        String categoria , String[] combustivel ,int cilindros ,double cilindrada ,
+public 	void dividirEtrocarOtipo(String[] partesLinha, String linha ,  int id , String marca , String modelo ,
+												int ano , String categoria , String[] combustivel ,int cilindros ,double cilindrada ,
                         String transmissao , String tracao , double consumoCidade, double consumoEstrada ,
-                        double co2 , boolean turbo , LocalDate dataRegistro);
+                        double co2 , boolean turbo , LocalDate dataRegistro)
 {
 	partesLinha = linha.split(",");
 	id = Integer.parseInt(partesLinha[0]);

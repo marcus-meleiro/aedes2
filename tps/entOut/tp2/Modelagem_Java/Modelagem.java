@@ -213,9 +213,9 @@ class Veiculo
 // FUNÇÃO SPLITAR O QUE EU QUERO É : AO CHAMR A FUNÇÃO , COMO O PROGRAMA LE A LINHA INTEIRA DO CSV , DIVIR ESTÁ LINHA EM UM VETOR DE STRINGS
 // TEM 2 ATRIBUTOS O PRIMEIRO É O VETOR DE STRINGS QUE VAU RECEBR CADA 'PEDAÇO DA LINHA SEPARADO' , O SEGUNDO E A LINHA COMPLETA
 public 	void dividirEtrocarOtipo(String[] partesLinha, String linha ,  int id , String marca , String modelo ,
-												int ano , String categoria , String[] combustivel ,int cilindros ,double cilindrada ,
-                        String transmissao , String tracao , double consumoCidade, double consumoEstrada ,
-                        double co2 , boolean turbo , LocalDate dataRegistro)
+int ano , String categoria , String[] combustivel ,int cilindros ,double cilindrada ,
+String transmissao , String tracao , double consumoCidade, double consumoEstrada ,
+double co2 , boolean turbo , LocalDate dataRegistro)
 {
 	partesLinha = linha.split(",");
 	id = Integer.parseInt(partesLinha[0]);

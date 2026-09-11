@@ -1,9 +1,12 @@
+import java.time.LocalDate;
 import java.util.*;
 import java.io.*;
 
 public class Modelagem{
 class Veiculo
 {
+
+//VARIVEIS DA CLASSE -  DE ACORDO COM A TABELA DA QUESTÃO
 	private int id;
 	private String marca;
 	private String modelo;
@@ -18,8 +21,11 @@ class Veiculo
 	private double consumoEstrada;
 	private double co2;
 	private boolean turbo;
-	private String dataRegistro;
+	private LocalDate dataRegistro;
 
+
+
+	//CRIANDO A CLASSE VEICULO , NÃOS SE O QUE EU FIZ NA VARIAVEL DATRA DE REGISTRO VAI FUNCIONAR VERIFICAR COM O PROFESSOR SE PODE USAR  O LOCAL DATE OU TEM QUE SER NO FORMAT
 	public Veiculo()
 	{
 		this.id = 0;
@@ -36,8 +42,12 @@ class Veiculo
 		this.consumoEstrada = 0.0;
 		this.co2 = 0.0;
 		this.turbo = false;
-		this.dataRegistro = " ";
+		this.dataRegistro =LocalDate.now();
 	}
+
+
+
+	//INICIALIZANDO VEICULO PASSSANDO AS VARIAVEIS
 	public Veiculo(int id , String marca , String modelo , int ano , String categoria , String[] combustivel ,int cilindros ,double cilindrada , String transmissao , String tracao , double consumoCidade, double consumoEstrada , double co2 , boolean turbo , String dataRegistro)
 	{
 		this.id = id;
@@ -54,11 +64,14 @@ class Veiculo
 		this.consumoEstrada = consumoEstrada;
 		this.co2 = co2;
 		this.turbo = turbo;
-		this.dataRegistro = dataRegistro;	
+
+		this.dataRegistro = dataRegistro;
 	
 	}
 
 
+
+	//GETTTERS E SETTERS - CRIE DE TODOS DEPOIS AVALIOU QUAL É NECESSARIO OU NÃO
 	public int getId()
 	{
 		return id;
@@ -104,33 +117,110 @@ class Veiculo
 		this.categoria = categoria;
 	}
 
-	public 
+	public String [] getCombustivel()
+    {
+        return combustivel;
+    }
+    public void setCombustiveis(String [] combustivel)
+    {
+        this.combustivel = combustivel;
+    }
+
+    public int getCilindros()
+    {
+        return cilindros;
+    }
+    public void setCilindros(int cilindro)
+    {
+        this.cilindros = cilindros;
+    }
+
+    public double getCilindrada()
+    {
+        return cilindrada;
+    }
+    public void setCilindrada(double cilindrada)
+    {
+        this.cilindrada = cilindrada;
+    }
+
+    public String getTransmissao()
+    {
+        return transmissao;
+    }
+    public void setTransmissao(String transmissao)
+    {
+        this.transmissao = transmissao;
+    }
 
 
+    public String getTracao()
+    {
+        return tracao;
+    }
+    public void setTracao(String tracao)
+    {
+        this.tracao = tracao;
+    }
 
+    public double getConsumoCidade()
+    {
+        return consumoCidade;
+    }
+    public void setConsumoCidade(double consumoCidade)
+    {
+        this.consumoCidade = consumoCidade;
+    }
 
+    public double getConsumoEsrtrada()
+    {
+        return consumoEstrada;
+    }
+    public void setConsumoEstrada(double consumoEstrda)
+    {
+        this.consumoEstrada = consumoEstrada;
+    }
 
+    public double getCo2()
+    {
+        return co2;
+    }
+    public void setCo2(double co2)
+    {
+        this.co2 = co2;
+    }
 
+    public boolean getTurbo()
+    {
+        return turbo;
+    }
+    public void setTurbo(boolean turbo)
+    {
+        this.turbo = turbo;
+    }
 
-
-
-
-
+    public LocalDate getData()
+    {
+        return dataRegistro;
+    }
+    public void getData(LocalDate dataRegistro)
+    {
+        this.dataRegistro = dataRegistro;
+    }
 
 }
 
-public String[] splitar(String[] partesLinha, String linha)
+
+
+// FUNÇÃO SPLITAR O QUE EU QUERO É : AO CHAMR A FUNÇÃO , COMO O PROGRAMA LE A LINHA INTEIRA DO CSV , DIVIR ESTÁ LINHA EM UM VETOR DE STRINGS
+// TEM 2 ATRIBUTOS O PRIMEIRO É O VETOR DE STRINGS QUE VAU RECEBR CADA 'PEDAÇO DA LINHA SEPARADO' , O SEGUNDO E A LINHA COMPLETA
+public 	void dividirEtrocarOtipo(String[] partesLinha, String linha ,  int id , String marca , String modelo , int ano ,
+                        String categoria , String[] combustivel ,int cilindros ,double cilindrada ,
+                        String transmissao , String tracao , double consumoCidade, double consumoEstrada ,
+                        double co2 , boolean turbo , LocalDate dataRegistro);
 {
 	partesLinha = linha.split(",");
-	return partesLinha;
-
-}
-public void atribuir( String[] partesLinha , int id , String marca , String modelo , int ano ,
-					  String categoria , String[] combustivel ,int cilindros ,double cilindrada ,
-					  String transmissao , String tracao , double consumoCidade, double consumoEstrada ,
-					  double co2 , boolean turbo , String dataRegistro)
-{
-	id = Integer.parseInt(partesLinha[6]);
+	id = Integer.parseInt(partesLinha[0]);
 	marca = partesLinha[1];
 	modelo = partesLinha[2];
 	ano = Integer.parseInt(partesLinha[3]);
@@ -144,18 +234,16 @@ public void atribuir( String[] partesLinha , int id , String marca , String mode
 	consumoEstrada = Double.parseDouble(partesLinha[11]);
 	co2 = Double.parseDouble(partesLinha[12]);
 	turbo = Boolean.parseBoolean(partesLinha[13]);
-	dataRegistro = partesLinha[14];
-
+	String [] dataSeparada = partesLinha[14].split("-");
+	dataRegistro =  LocalDate.of(Integer.parseInt(dataSeparada[2]),Integer.parseInt(dataSeparada[1]),Integer.parseInt(dataSeparada[0]));
 
 }
 
 
 
-
-
 	public static void main(String[]args)
 	{
-		String path = "./tmp";
+
 
 
 	}

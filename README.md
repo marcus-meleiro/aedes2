@@ -6,7 +6,7 @@ Repositório de códigos da disciplina de Algoritmos e Estrutura de Dados II
 
 
 ## 👨‍⚕️ Slides
-[Pasta com powerpoints usados em aula](aulas)
+[[Pasta com powerpoints usados em aula](aulas)](https://drive.google.com/drive/folders/16QPSDgUKzRaKFLj1AYmUy1RBJ5hE71IM?usp=drive_link.)
 
 
 ## 📁 Bibliotecas

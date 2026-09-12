@@ -1,9 +1,19 @@
+<<<<<<< HEAD
+=======
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+>>>>>>> 4a4cdfc (Esta faltando concertar o erro de atribuição as variaveis que sao atributos da classe Veiculo , para isso separar a função de separar da atribuir e na atribuir deve retorna um objeto Veiculo)
 import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4a4cdfc (Esta faltando concertar o erro de atribuição as variaveis que sao atributos da classe Veiculo , para isso separar a função de separar da atribuir e na atribuir deve retorna um objeto Veiculo)
 class Veiculo
 {
 
@@ -220,6 +230,7 @@ public class Modelagem
 
 // FUNÇÃO SPLITAR O QUE EU QUERO É : AO CHAMR A FUNÇÃO , COMO O PROGRAMA LE A LINHA INTEIRA DO CSV , DIVIR ESTÁ LINHA EM UM VETOR DE STRINGS
 // TEM 2 ATRIBUTOS O PRIMEIRO É O VETOR DE STRINGS QUE VAU RECEBR CADA 'PEDAÇO DA LINHA SEPARADO' , O SEGUNDO E A LINHA COMPLETA
+<<<<<<< HEAD
 public static String[] dividirLinha(String[] partesLinha, String linha)
 {
 	if (linha.endsWith(";")) {
@@ -283,6 +294,37 @@ public static void imprimirVeiculo(Veiculo veiculo)
 				veiculo.getData().format(formatoSaida) +
 				"]");
 }
+=======
+public static 	void dividirEtrocarOtipo(String[] partesLinha, String linha ,  int id , String marca , String modelo ,
+int ano , String categoria , String combustivel ,int cilindros ,double cilindrada ,
+String transmissao , String tracao , double consumoCidade, double consumoEstrada ,
+double co2 , boolean turbo , LocalDate dataRegistro)
+{
+	if (linha.endsWith(";")) {
+    linha = linha.substring(0, linha.length() - 1);
+	}
+	partesLinha = linha.split(",");
+	id = Integer.parseInt(partesLinha[0].trim());
+	marca = partesLinha[1].trim();
+	modelo = partesLinha[2].trim();
+	ano = Integer.parseInt(partesLinha[3].trim());
+	categoria = partesLinha[4].trim();
+	combustivel = partesLinha[5].trim();
+	cilindros = Integer.parseInt(partesLinha[6].trim());
+	cilindrada = Double.parseDouble(partesLinha[7].trim());
+	transmissao = partesLinha[8].trim();
+	tracao = partesLinha[9].trim();
+	consumoCidade = Double.parseDouble(partesLinha[10].trim());
+	consumoEstrada = Double.parseDouble(partesLinha[11].trim());
+	co2 = Double.parseDouble(partesLinha[12].trim());
+	turbo = Boolean.parseBoolean(partesLinha[13].trim());
+	String [] dataSeparada = partesLinha[14].trim().replace(";", "").split("-");
+	dataRegistro =  LocalDate.of(Integer.parseInt(dataSeparada[0]),Integer.parseInt(dataSeparada[1]),Integer.parseInt(dataSeparada[2]));
+
+}
+
+
+>>>>>>> 4a4cdfc (Esta faltando concertar o erro de atribuição as variaveis que sao atributos da classe Veiculo , para isso separar a função de separar da atribuir e na atribuir deve retorna um objeto Veiculo)
 
 	public static void main(String[]args)
 	{
@@ -292,6 +334,7 @@ public static void imprimirVeiculo(Veiculo veiculo)
 
 		//Criando as variaveis que vao dentro da classe;
 		
+<<<<<<< HEAD
 		// Quando eu ler a linha , vou dividila ao dividir vou salvar nessa variavel criei a varialve partesLinha2 para ser o retorno da função por que yava dando erro
 		//provalvelmente nao precisava mas foi a forma mais rapida e facil de de resolver
 		String[] partesLinha1 = new String[16];
@@ -302,6 +345,12 @@ public static void imprimirVeiculo(Veiculo veiculo)
 
 		//variaveis que serão atribustos da classe veiculo
 		//coloque parametros genricos inicialmente pois estava dando erro , nao sabia resolver de outra forma
+=======
+		// Quando eu ler a linha , vou dividila ao dividir vou salvar nessa variavel
+		String[] partesLinha = new String[16];
+
+		//variaveis que serão atribustos da classe veiculo
+>>>>>>> 4a4cdfc (Esta faltando concertar o erro de atribuição as variaveis que sao atributos da classe Veiculo , para isso separar a função de separar da atribuir e na atribuir deve retorna um objeto Veiculo)
 		int id = 0;
 		String marca = "vazio";
 		String modelo = "vazio";
@@ -318,21 +367,31 @@ public static void imprimirVeiculo(Veiculo veiculo)
 		boolean turbo = false;
 		LocalDate dataRegistro = LocalDate.now();
 
+<<<<<<< HEAD
 		//Criando o array de veiculos , nesse exercicio vou utilizar os array - nos proximos se precisar eu troco é so uma maneira de salvar os objetos
+=======
+		//Criano o array de veiculos , nesse exercicio vou utilizar os array
+>>>>>>> 4a4cdfc (Esta faltando concertar o erro de atribuição as variaveis que sao atributos da classe Veiculo , para isso separar a função de separar da atribuir e na atribuir deve retorna um objeto Veiculo)
 		Veiculo [] veiculos = new Veiculo[550];
 		String linha;
 		int posVeiculo = 0;
 
 		//Lendo as linhas do arquivo enquanto a linha nao for nula
+<<<<<<< HEAD
 	
 		//Lendo as linahs criando os veiculos passando os atributos e salnado no array veiculos
 		try (BufferedReader br = new BufferedReader(new FileReader(path)))	{
+=======
+		try (BufferedReader br = new BufferedReader(new FileReader(path)))
+		{
+>>>>>>> 4a4cdfc (Esta faltando concertar o erro de atribuição as variaveis que sao atributos da classe Veiculo , para isso separar a função de separar da atribuir e na atribuir deve retorna um objeto Veiculo)
 			
 			
 			
 			br.readLine();
 			while ((linha = br.readLine()) != null)
 			{
+<<<<<<< HEAD
 				Veiculo aux = new Veiculo();
 				partesLinha2 = dividirLinha(partesLinha1, linha);
 
@@ -340,6 +399,31 @@ public static void imprimirVeiculo(Veiculo veiculo)
 			
 			imprimirVeiculo(veiculos[posVeiculo]);
             posVeiculo++;
+=======
+				dividirEtrocarOtipo(partesLinha,linha ,id ,marca ,modelo , ano ,  categoria , combustivel ,cilindros , cilindrada ,transmissao ,tracao ,consumoCidade,consumoEstrada ,co2 ,turbo ,dataRegistro);
+				Veiculo aux = new Veiculo(id ,marca,modelo,ano,categoria,combustivel,cilindros,cilindrada,transmissao,tracao,consumoCidade,consumoEstrada,co2,turbo,dataRegistro);
+				//veiculos[posVeiculo] = aux;
+				DateTimeFormatter formatoSaida = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+				System.out.println("[" +
+				veiculos[posVeiculo].getId() + " ## " +
+				veiculos[posVeiculo].getMarca() + " ## " +
+				veiculos[posVeiculo].getModelo() + " ## " +
+				veiculos[posVeiculo].getAno() + " ## " +
+				veiculos[posVeiculo].getCategoria() + " ## " +
+				veiculos[posVeiculo].getCombustivelFormatado() + " ## " +
+				veiculos[posVeiculo].getCilindros() + " ## " +
+				veiculos[posVeiculo].getCilindrada() + " ## " +
+				veiculos[posVeiculo].getTransmissao() + " ## " +
+				veiculos[posVeiculo].getTracao() + " ## " +
+				String.format(Locale.US, "%.2f", veiculos[posVeiculo].getConsumoCidade()) + " ## " +
+				String.format(Locale.US, "%.2f", veiculos[posVeiculo].getConsumoEsrtrada()) + " ## " +
+				String.format(Locale.US, "%.1f", veiculos[posVeiculo].getCo2()) + " ## " +
+				veiculos[posVeiculo].getTurbo() + " ## " +
+				veiculos[posVeiculo].getData().format(formatoSaida) +
+				"]");
+				posVeiculo++;
+>>>>>>> 4a4cdfc (Esta faltando concertar o erro de atribuição as variaveis que sao atributos da classe Veiculo , para isso separar a função de separar da atribuir e na atribuir deve retorna um objeto Veiculo)
 
 			}
 
@@ -349,7 +433,10 @@ public static void imprimirVeiculo(Veiculo veiculo)
         }
 
 	
+<<<<<<< HEAD
 				//criei no vim mas editei algumas partes no vscode e intelij pela facilidade de vixualização , vou testar no vim agora
+=======
+>>>>>>> 4a4cdfc (Esta faltando concertar o erro de atribuição as variaveis que sao atributos da classe Veiculo , para isso separar a função de separar da atribuir e na atribuir deve retorna um objeto Veiculo)
 
 
 	}

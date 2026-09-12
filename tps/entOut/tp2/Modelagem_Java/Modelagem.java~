@@ -1,0 +1,163 @@
+import java.util.*;
+import java.io.*;
+
+public class Modelagem{
+class Veiculo
+{
+	private int id;
+	private String marca;
+	private String modelo;
+	private int ano;
+	private String categoria;
+	private String[] combustivel;
+	private int cilindros;
+	private double cilindrada;
+	private String transmissao;
+	private String tracao;
+	private double consumoCidade;
+	private double consumoEstrada;
+	private double co2;
+	private boolean turbo;
+	private String dataRegistro;
+
+	public Veiculo()
+	{
+		this.id = 0;
+		this.marca = " ";
+		this.modelo = " ";
+		this.ano = 0000;
+		this.categoria = " ";
+		this.combustivel = new String[]{" "," "};
+		this.cilindros = 0;
+		this.cilindrada = 0.0;
+		this.transmissao = " ";
+		this.tracao = " ";
+		this.consumoCidade = 0.0;
+		this.consumoEstrada = 0.0;
+		this.co2 = 0.0;
+		this.turbo = false;
+		this.dataRegistro = " ";
+	}
+	public Veiculo(int id , String marca , String modelo , int ano , String categoria , String[] combustivel ,int cilindros ,double cilindrada , String transmissao , String tracao , double consumoCidade, double consumoEstrada , double co2 , boolean turbo , String dataRegistro)
+	{
+		this.id = id;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.ano = ano;
+		this.categoria = categoria;
+		this.combustivel =  combustivel;
+		this.cilindros = cilindros;
+		this.cilindrada = cilindrada;
+		this.transmissao = transmissao;
+		this.tracao = tracao;
+		this.consumoCidade =  consumoCidade;
+		this.consumoEstrada = consumoEstrada;
+		this.co2 = co2;
+		this.turbo = turbo;
+		this.dataRegistro = dataRegistro;	
+	
+	}
+
+
+	public int getId()
+	{
+		return id;
+	}
+	public void setId(int id)
+	{
+		this.id = id;
+	}
+
+	public String getMarca()
+	{
+		return marca;
+	}
+	public void setMarca(String marca)
+	{
+		this.marca = marca;
+	}
+
+	public String getModelo()
+	{
+		return modelo;
+	}
+	public void setModelo(String modelo)
+	{
+		this.modelo = modelo;
+	}
+
+	public int getAno()
+	{
+		return ano;
+	}
+	public void setAno(int ano)
+	{
+		this.ano = ano;
+	}
+
+	public String getCategoria()
+	{
+		return categoria;
+	}
+	public void setCategoria(String categoria)
+	{
+		this.categoria = categoria;
+	}
+
+	public 
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+public String[] splitar(String[] partesLinha, String linha)
+{
+	partesLinha = linha.split(",");
+	return partesLinha;
+
+}
+public void atribuir( String[] partesLinha , int id , String marca , String modelo , int ano ,
+					  String categoria , String[] combustivel ,int cilindros ,double cilindrada ,
+					  String transmissao , String tracao , double consumoCidade, double consumoEstrada ,
+					  double co2 , boolean turbo , String dataRegistro)
+{
+	id = Integer.parseInt(partesLinha[6]);
+	marca = partesLinha[1];
+	modelo = partesLinha[2];
+	ano = Integer.parseInt(partesLinha[3]);
+	categoria = partesLinha[4];
+	combustivel = partesLinha[5].split(";");
+	cilindros = Integer.parseInt(partesLinha[6]);
+	cilindrada = Double.parseDouble(partesLinha[7]);
+	transmissao = partesLinha[8];
+	tracao = partesLinha[9];
+	consumoCidade = Double.parseDouble(partesLinha[10]);
+	consumoEstrada = Double.parseDouble(partesLinha[11]);
+	co2 = Double.parseDouble(partesLinha[12]);
+	turbo = Boolean.parseBoolean(partesLinha[13]);
+	dataRegistro = partesLinha[14];
+
+
+}
+
+
+
+
+
+	public static void main(String[]args)
+	{
+		String path = "./tmp";
+
+
+	}
+}
+
